@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(0, 1); // RX, TX
+//SoftwareSerial mySerial(10, 11); // RX, TX
 char c;
 
 void setup() {
@@ -9,7 +9,7 @@ Serial.begin(9600);
 
 Serial.println("Enter AT commands:");
 
-mySerial.begin(38400);
+Serial2.begin(38400);
 
 }
 
@@ -17,15 +17,15 @@ void loop()
 
 {
 
-if (mySerial.available()>0)
+if (Serial2.available()>0){
 
-c= mySerial.read();
+c= Serial2.read();
 Serial.write(c);
-
-if (Serial.available()>0)
-
+}
+delay(100);
+if (Serial.available()>0){
 c=Serial.read();
-mySerial.write(c);
-
+Serial2.write(c);
+}
 
 }

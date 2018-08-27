@@ -2,7 +2,7 @@
 
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(0,1); // RX, TX
+SoftwareSerial mySerial(10,11); // RX, TX
 char c;
 
 void setup() {
@@ -25,8 +25,9 @@ if (mySerial.available()>0)
 Serial.write(c);
 
 }
-if (Serial.available()>0)
+if (Serial.available()>0){
 c=Serial.read();
 mySerial.write(c);
+}
 
 }
