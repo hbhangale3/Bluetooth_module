@@ -1,5 +1,5 @@
 #include <SoftwareSerial.h>
-
+// the following code works for two way communication along with the bluetooth_tx code present in the same repository.
 //SoftwareSerial mySerial(10, 11); // RX, TX
 char c;
 
